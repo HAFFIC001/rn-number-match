@@ -1,79 +1,46 @@
-Number Match Puzzle Game
+This is a Number Match–style puzzle game inspired by the “Number Master” mobile game. The objective is to clear the grid by matching two numbers that are either equal or sum to 10. The game includes multiple levels with increasing difficulty, a countdown timer, and an “Add Row” mechanic for additional challenge. Matched cells fade instead of being removed, and invalid moves trigger a visual warning.
 
-A React Native + Expo puzzle game inspired by Number Master by KiwiFun.
-Built as part of the Fresher Assignment to demonstrate clean architecture, reusable components, and game logic implementation.
+✅ Features Implemented
 
-✅ 📱 Game Overview
+✅ Match two numbers if they are equal or sum = 10
 
-A number-matching puzzle game where the player clears the grid by matching:
+✅ Three levels with unique grid sizes and difficulty
 
-Two equal numbers, or
-
-Two numbers whose sum = 10
-
-Additional rules (as in Number Master):
-
-✅ Matched cells fade (not removed)
+✅ Each level has a 2-minute timer
 
 ✅ Grid starts with only 3–4 rows filled
 
-✅ “Add Row” button inserts a new row (limited per level)
+✅ Add Row button (limited per level)
 
-✅ Must complete each level in 2 minutes
+✅ Matched cells remain but fade out
 
-✅ Progressive difficulty across 3 distinct levels
+✅ Invalid match triggers shake animation
 
-✅ Valid selection = fade animation
+✅ Clean architecture with:
 
-✅ Invalid selection = shake animation
+Pure game logic (logic.ts)
 
-This game follows the same mechanics of the Google Play version:
-https://play.google.com/store/apps/details?id=com.kiwifun.game.android.numbermaster.puzzles
+Reusable Cell component
 
-✅ 📂 Project Structure
-rn-number-match/
-├─ App.tsx
-├─ app.json
-├─ package.json
-├─ babel.config.js
-├─ tsconfig.json
-├─ assets/
-│  ├─ icon.png
-│  ├─ splash.png
-│  └─ adaptive-icon.png
-└─ src/
-   ├─ components/
-   │  └─ Cell.tsx           # UI for each number tile (fade, shake animations)
-   ├─ screens/
-   │  └─ GameScreen.tsx     # Main game screen (grid, timer, levels)
-   ├─ game/
-   │  └─ logic.ts           # Pure match logic (sum=10, path rule, add row)
-   ├─ levels.ts             # Level definitions
-   └─ types.ts              # Shared TypeScript models
+Level configurations (levels.ts)
 
-✅ 🎮 Features Implemented
-✅ Matching Rules
+Main game screen handling state, timer, and progression
 
-Match equal numbers
+▶️ How to Set Up & Run the App
+1. Install Dependencies
+npm install
+npx expo install react-native-reanimated react-native-gesture-handler expo-asset
 
-Match numbers whose sum is exactly 10
+2. Start the Development Server
+npx expo start
 
-Faded cells remain on the board (not removed)
+3. Run on Device or Simulator
 
-✅ Grid & Path Rules
+Press i to run on iOS Simulator
 
-Only first 3–4 rows are filled at start
+Press a to run on Android Emulator
 
-Player can add limited rows
+Or scan QR code using Expo Go on mobile
 
-Matches allowed if:
-
-Direct line is clear (horizontal/vertical/diagonal), or
-
-Flattened path between cells has no obstacles
-
-✅ Levels
-Level	Grid Size	Filled Rows	Add Rows Allowed	Time
-1	8×9	3	6	120s
-2	9×10	4	7	120s
-3	10×12	4	8	120s
+4. Clean Start (if needed)
+npx expo start -c
