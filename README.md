@@ -28,10 +28,12 @@ Main game screen handling state, timer, and progression
 
 ▶️ How to Set Up & Run the App
 1. Install Dependencies
+   
 npm install
 npx expo install react-native-reanimated react-native-gesture-handler expo-asset
 
 2. Start the Development Server
+   
 npx expo start
 
 3. Run on Device or Simulator
